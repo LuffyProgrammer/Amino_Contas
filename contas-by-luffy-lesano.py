@@ -47,6 +47,9 @@ try:
 	senha = input('Sua Senha >> ')
 	codigo = input('Codigo >> ')
 	client.register(nickname='𝑇𝑎𝑖𝑙𝑠 𝐷. 𝑀𝑎𝑟𝑠𝒉𝑎𝑙.', email=com, password=senha, verificationCode=codigo, deviceId=Device)
+        client.verify(email=com, code=codigo)
+        client.login(email=com, password=senha)
+        client.activate_account(email=com, code=codigo)
 except amino.exceptions.AccountLimitReached:
 	print('Não pode criar mais conta com este deviceId.')
 
